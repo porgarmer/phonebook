@@ -1,0 +1,91 @@
+﻿@model phonebook.Models.PhonebookRecord
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PhonebookRecord</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="firstName" class="control-label"></label>
+                <input asp-for="firstName" class="form-control" disabled/>
+                <span asp-validation-for="firstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lastName" class="control-label"></label>
+                <input asp-for="lastName" class="form-control" disabled/>
+                <span asp-validation-for="lastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="areaCode" class="control-label"></label>
+                <input asp-for="areaCode" class="form-control" disabled/>
+                <span asp-validation-for="areaCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phoneNumber" class="control-label"></label>
+                <input asp-for="phoneNumber" class="form-control" disabled/>
+                <span asp-validation-for="phoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mobileNumber" class="control-label"></label>
+                <input asp-for="mobileNumber" class="form-control" />
+                <span asp-validation-for="mobileNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="houseNumber" class="control-label"></label>
+                <input asp-for="houseNumber" class="form-control" disabled/>
+                <span asp-validation-for="houseNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="streetName" class="control-label"></label>
+                <input asp-for="streetName" class="form-control" disabled/>
+                <span asp-validation-for="streetName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="city" class="control-label"></label>
+                <input asp-for="city" class="form-control" disabled/>
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="province" class="control-label"></label>
+                <input asp-for="province" class="form-control" disabled/>
+                <span asp-validation-for="province" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="zipCode" class="control-label"></label>
+                <input asp-for="zipCode" class="form-control" disabled/>
+                <span asp-validation-for="zipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label asp-for="status">Status</label>
+                <select class="form-control" id="exampleSelect" asp-for="status" disabled>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" class="form-control" disabled/>
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

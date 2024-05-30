@@ -1,0 +1,30 @@
+﻿@model System.Data.DataTable
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Mobile Number</th>
+        <th>Status</th>
+    </tr>
+    @for (int i = 0; i < Model.Rows.Count; i++)
+    {
+        <tr>
+            <td>@Model.Rows[i][1]</td>
+            <td>@Model.Rows[i][2]</td>
+            <td>@Model.Rows[i][4]</td>
+            <td>@Model.Rows[i][5]</td>
+            <td>@Model.Rows[i][11]</td>
+            <td>
+                <a href="@Url.Action("Edit", "PhoneBook", new {@id = Model.Rows[i][0] })">Edit</a>
+            </td>
+        </tr>
+    }
+
+
+
+</table>
+<a href="@Url.Action("Create", "PhoneBook")">Add Record</a>
+<a href="@Url.Action("Delete", "PhoneBook")">Soft Delete</a>
+<a href="@Url.Action("DeleteAll", "PhoneBook")">Hard Delete</a>
